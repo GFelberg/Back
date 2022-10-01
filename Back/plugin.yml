@@ -1,0 +1,8 @@
+name: Back
+version: 1.1
+author: GFelberg
+api-version: 1.13
+main: me.GFelberg.Back.Main
+commands:
+  back:
+    usage: /<command>
