@@ -19,11 +19,11 @@ public class BackUtils {
 	public static String prefix, message, failed, delay_before, delay_after;
 
 	public static void loadVariables() {
-		prefix = Main.getInstance().getConfig().getString("Back.Prefix").replace("&", "§");
-		message = Main.getInstance().getConfig().getString("Back.Message").replace("&", "§");
-		failed = Main.getInstance().getConfig().getString("Back.Failed").replace("&", "§");
-		delay_before = Main.getInstance().getConfig().getString("Cooldown.DelayBefore").replace("&", "§");
-		delay_after = Main.getInstance().getConfig().getString("Cooldown.DelayAfter").replace("&", "§");
+		prefix = Main.getInstance().getConfig().getString("Back.Prefix").replace("&", "ï¿½");
+		message = Main.getInstance().getConfig().getString("Back.Message").replace("&", "ï¿½");
+		failed = Main.getInstance().getConfig().getString("Back.Failed").replace("&", "ï¿½");
+		delay_before = Main.getInstance().getConfig().getString("Cooldown.DelayBefore").replace("&", "ï¿½");
+		delay_after = Main.getInstance().getConfig().getString("Cooldown.DelayAfter").replace("&", "ï¿½");
 		cooldownTime = Main.getInstance().getConfig().getInt("Cooldown.Time");
 	}
 
@@ -35,9 +35,9 @@ public class BackUtils {
 			Main.getInstance().reloadConfig();
 			loadVariables();
 			p.sendMessage(prefix + " " + ChatColor.GREEN + "Plugin reloaded successfully!");
-			Bukkit.getServer().getConsoleSender().sendMessage("======================================");
-			Bukkit.getServer().getConsoleSender().sendMessage(ChatColor.GREEN + "Back Plugin reloaded");
-			Bukkit.getServer().getConsoleSender().sendMessage("======================================");
+			Bukkit.getConsoleSender().sendMessage("======================================");
+			Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "Back Plugin reloaded");
+			Bukkit.getConsoleSender().sendMessage("======================================");
 		}
 	}
 
