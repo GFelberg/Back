@@ -17,7 +17,7 @@ The Back plugin has the ability to teleport the player to your last location aft
     back.reload : Access to Reload the Plugin
   
 #### Available in the following versions ⚙️:
-  - 1.11x - 1.19x
+  - 1.8x - 1.19x
 
 #### Alternative Hosting 🏠:
   - Spigot: https://www.spigotmc.org/resources/back.94702/
