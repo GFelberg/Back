@@ -19,7 +19,7 @@ public class Main extends JavaPlugin {
 		Bukkit.getPluginManager().registerEvents(new BackEvent(), this);
 		Bukkit.getConsoleSender().sendMessage("-----------------------------");
 		Bukkit.getConsoleSender().sendMessage("Back Plugin Enabled!");
-		Bukkit.getConsoleSender().sendMessage("Plugin developed by GFelberg");
+		Bukkit.getConsoleSender().sendMessage("Plugin develloped by GFelberg");
 		Bukkit.getConsoleSender().sendMessage("-----------------------------");
 	}
 
@@ -30,7 +30,7 @@ public class Main extends JavaPlugin {
 	public void onDisable() {
 		Bukkit.getConsoleSender().sendMessage("-----------------------------");
 		Bukkit.getConsoleSender().sendMessage("Back Plugin Disabled!");
-		Bukkit.getConsoleSender().sendMessage("Plugin developed by GFelberg");
+		Bukkit.getConsoleSender().sendMessage("Plugin develloped by GFelberg");
 		Bukkit.getConsoleSender().sendMessage("-----------------------------");
 	}
 }
