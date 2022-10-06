@@ -19,11 +19,11 @@ public class BackUtils {
 	public static String prefix, message, failed, delay_before, delay_after;
 
 	public static void loadVariables() {
-		prefix = Main.getInstance().getConfig().getString("Back.Prefix").replace("&", "�");
-		message = Main.getInstance().getConfig().getString("Back.Message").replace("&", "�");
-		failed = Main.getInstance().getConfig().getString("Back.Failed").replace("&", "�");
-		delay_before = Main.getInstance().getConfig().getString("Cooldown.DelayBefore").replace("&", "�");
-		delay_after = Main.getInstance().getConfig().getString("Cooldown.DelayAfter").replace("&", "�");
+		prefix = Main.getInstance().getConfig().getString("Back.Prefix").replace("&", "§");
+		message = Main.getInstance().getConfig().getString("Back.Message").replace("&", "§");
+		failed = Main.getInstance().getConfig().getString("Back.Failed").replace("&", "§");
+		delay_before = Main.getInstance().getConfig().getString("Cooldown.DelayBefore").replace("&", "§");
+		delay_after = Main.getInstance().getConfig().getString("Cooldown.DelayAfter").replace("&", "§");
 		cooldownTime = Main.getInstance().getConfig().getInt("Cooldown.Time");
 	}
 
