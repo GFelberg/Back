@@ -1,6 +1,5 @@
 package me.GFelberg.Back.data;
 
-import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -93,13 +92,6 @@ public class BackSystem {
 	}
 
 	public static void loadAllBackLocations() {
-
-		File file = new File(Bukkit.getServer().getPluginManager().getPlugin("Back").getDataFolder(),
-				"death_locations.yml");
-		if (!(file.exists())) {
-			BackConfig.setupConfig();
-			return;
-		}
 
 		for (Player players : Bukkit.getOnlinePlayers()) {
 			FileConfiguration customConfig = BackConfig.getConfig();

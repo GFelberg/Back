@@ -17,8 +17,8 @@ public class Main extends JavaPlugin {
 		instance = this;
 		saveDefaultConfig();
 		loadVariables();
-		BackSystem.loadAllBackLocations();
 		loadBackConfig();
+		BackSystem.loadAllBackLocations();
 		getCommand("back").setExecutor(new Back());
 		Bukkit.getPluginManager().registerEvents(new BackEvent(), this);
 		Bukkit.getConsoleSender().sendMessage("----------------------------");
