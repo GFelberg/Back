@@ -6,6 +6,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import me.GFelberg.Back.data.BackSystem;
 import me.GFelberg.Back.utils.BackUtils;
 
 public class Back implements CommandExecutor {
@@ -27,9 +28,10 @@ public class Back implements CommandExecutor {
 
 			Player p = (Player) sender;
 			BackUtils utils = new BackUtils();
+			BackSystem sys = new BackSystem();
 
 			if (args.length == 0) {
-				utils.backPlayer(p);
+				sys.backPlayer(p);
 				return true;
 			}
 

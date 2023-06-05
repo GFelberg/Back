@@ -11,7 +11,7 @@ public class HelpPageUtils {
 	public String getHelp_back() {
 		return Main.getInstance().getConfig().getString("Help.Back").replace("&", "§");
 	}
-	
+
 	public String getHelp_reload() {
 		return Main.getInstance().getConfig().getString("Help.Reload").replace("&", "§");
 	}
