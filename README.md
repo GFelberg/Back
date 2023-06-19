@@ -1,4 +1,4 @@
-# Back🔙 (1.8x - 1.19x)
+# Back🔙 (1.8x - 1.20x)
 
 ## English: :earth_americas:
 Back is a simple plugin made for Minecraft which has the ability to teleport the player to your last location after his death
@@ -12,6 +12,7 @@ Back is a simple plugin made for Minecraft which has the ability to teleport the
     back.back : Access to the Back command
     back.bypass : Access to the Back command without cooldown
     back.admin : Access to the Admin Help Page
+    back.update : Access to recieve notifications about the plugin, as new versions
     back.reload : Access to Reload the Plugin
     
 ### How the Plugin works?
@@ -19,9 +20,6 @@ Back is a simple plugin made for Minecraft which has the ability to teleport the
     teleport into his last location without cooldown, if enabled. The cooldown is in seconds and can be customized in the config.yml
     
     When the player execute the "/back" command, he will be teleported to his last location 
- 
-### Available in the following versions ⚙️:
-  - 1.8x - 1.19x
 
 ### Available for download at Spigot: https://www.spigotmc.org/resources/back.94702/
 
@@ -49,9 +47,6 @@ Back é um plugin desenvolvido para o Minecraft que possui a habilidade de telep
     teleportar para sua última localização sem esperar pelo cooldown, se ativado. O cooldown é em segundos e pode ser customizado na config.yml
     
     Quando o jogador executar o comando "/back", ele será teleportado para sua última localização
-  
-### Disponível para as seguintes versões ⚙️:
-  - 1.8x - 1.19x
 
 ### Disponível para download no Spigot: https://www.spigotmc.org/resources/back.94702/
 
