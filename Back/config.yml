@@ -11,16 +11,25 @@
 
 # Permissions
 
-# back.back : Access to the Back Command
-# back.bypass : Access to the Back Command without cooldown
+# back.back : Access to the Back command
+# back.bypass : Access to the Back command without cooldown
 # back.admin : Access to the Admin Help Page
+# back.update : Access to recieve notifications about the plugin, as new versions
 # back.reload : Access to Reload the Plugin
+
+# Placeholders
+
+# %back_delaytime% : Gets the remaining time for use the Back Command, if cooldown is enabled.
+
+# Update-Check Option - https://www.spigotmc.org/resources/back.94702/
+# If true, a permission will be required to recieve the notifications if the player doesnt have the OP enabled
+update-check: true
 
 # Configuration 1.0
 # This configuration will display the Back Messages
 
 Back:
-  Prefix: '&b&l[&eBack&b&l]&r'
+  Prefix: '&b[&eBack&b]&r'
   Message: '&eYou have been teleported to your last location'
   Failed: '&cYour teleport has been failed. No location found!'
   
@@ -30,21 +39,21 @@ Back:
 Help:
   Page: '&eShows this page'
   Back: '&eTeleports to your last location'
-  Reload: '&eReloads the Plugin'
+  Reload: '&eReloads the Plugin'  
   
 # Configuration 1.2
 # This configuration will display the Cooldown System
 
 # If "true", the player will have to wait 'x' seconds to use the command after his death.
+
 # If "false", the player can use the command immediately after his death.
+
 # If the player has "back.bypass" permission, the player will be able to use the command even with the cooldown enabled.
 # By default, the cooldown is disabled.
 
-# The Delay message is "You must wait 'x' seconds to use the command! If you wanna change the message, try it to make
-# one that understand the 'x' seconds position in the phrase between the DelayBefore and DelayAfter.
+# The Delay message is "You must wait 'x' seconds to use the command!", which 'x' is the %back_delaytime% placeholder.
 
 Cooldown:
   Enable: false
-  DelayBefore: '&cYou must wait'
-  DelayAfter: '&cseconds to use the command!'
+  Message: '&cYou must wait &b%back_delaytime% &cseconds to use the command!'
   Time: 10

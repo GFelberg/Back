@@ -16,20 +16,19 @@ public class BackSystem {
 	public static Map<Player, Location> back = new HashMap<Player, Location>();
 	public static HashMap<UUID, Long> cooldown = new HashMap<UUID, Long>();
 	public static int cooldownTime;
-	public static String message, failed, delay_before, delay_after;
+	public static String back_message, back_failed_message, back_cooldown_message;
 
 	public static void loadVariables() {
-		message = Main.getInstance().getConfig().getString("Back.Message").replace("&", "§");
-		failed = Main.getInstance().getConfig().getString("Back.Failed").replace("&", "§");
-		delay_before = Main.getInstance().getConfig().getString("Cooldown.DelayBefore").replace("&", "§");
-		delay_after = Main.getInstance().getConfig().getString("Cooldown.DelayAfter").replace("&", "§");
+		back_message = Main.getInstance().getConfig().getString("Back.Message").replace("&", "§");
+		back_failed_message = Main.getInstance().getConfig().getString("Back.Failed").replace("&", "§");
+		back_cooldown_message = Main.getInstance().getConfig().getString("Cooldown.Message").replace("&", "§");
 		cooldownTime = Main.getInstance().getConfig().getInt("Cooldown.Time");
 	}
 
 	public void backPlayer(Player p) {
 
 		if (!(back.containsKey(p))) {
-			p.sendMessage(failed);
+			p.sendMessage(back_failed_message);
 			return;
 		} else {
 			if (!(Main.getInstance().getConfig().getBoolean("Cooldown.Enable"))) {
@@ -43,7 +42,7 @@ public class BackSystem {
 					} else {
 						long time = ((cooldown.get(uuid) / 1000) + cooldownTime) - (System.currentTimeMillis() / 1000);
 						if (time > 0) {
-							p.sendMessage(delay_before + " " + time + " " + delay_after);
+							p.sendMessage(back_cooldown_message.replace("%back_delaytime%", String.valueOf(time)));
 						} else {
 							cooldown.remove(uuid);
 							teleportPlayer(p);
@@ -60,7 +59,7 @@ public class BackSystem {
 		BackConfig.saveConfig();
 		p.teleport(back.get(p));
 		back.remove(p);
-		p.sendMessage(message);
+		p.sendMessage(back_message);
 	}
 
 	public static void createBackLocation(Player p) {
