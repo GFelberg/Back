@@ -5,6 +5,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
 import me.GFelberg.Back.Main;
+import me.GFelberg.Back.data.BackSystem;
 
 public class BackUtils {
 
@@ -21,6 +22,7 @@ public class BackUtils {
 		} else {
 			Main.getInstance().reloadConfig();
 			Main.getInstance().loadVariables();
+			BackSystem.loadClickOptionMessages();
 			p.sendMessage(prefix + " " + ChatColor.GREEN + "Plugin reloaded successfully!");
 			Bukkit.getConsoleSender().sendMessage("======================================");
 			Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "Back Plugin reloaded");

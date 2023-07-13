@@ -1,10 +1,13 @@
 package me.GFelberg.Back.data;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
@@ -15,12 +18,14 @@ public class BackSystem {
 
 	public static Map<Player, Location> back = new HashMap<Player, Location>();
 	public static HashMap<UUID, Long> cooldown = new HashMap<UUID, Long>();
+	public static List<String> clickoption_messages = new ArrayList<String>();
 	public static int cooldownTime;
-	public static String back_message, back_failed_message, back_cooldown_message;
+	public static String back_message, back_failed_message, back_cooldown_message, back_nopermission;
 
 	public static void loadVariables() {
 		back_message = Main.getInstance().getConfig().getString("Back.Message").replace("&", "§");
 		back_failed_message = Main.getInstance().getConfig().getString("Back.Failed").replace("&", "§");
+		back_nopermission = Main.getInstance().getConfig().getString("Back.NoPermission").replace("&", "§");
 		back_cooldown_message = Main.getInstance().getConfig().getString("Cooldown.Message").replace("&", "§");
 		cooldownTime = Main.getInstance().getConfig().getInt("Cooldown.Time");
 	}
@@ -108,6 +113,17 @@ public class BackSystem {
 				Location loc = new Location(Bukkit.getWorld(world), x, y, z, (float) yaw, (float) pitch);
 				back.put(players, loc);
 			}
+		}
+	}
+
+	public static void loadClickOptionMessages() {
+		FileConfiguration config = Main.getInstance().getConfig();
+		List<String> clickMessage = config.getStringList("ClickOption");
+		clickoption_messages = new ArrayList<>();
+
+		for (String msg : clickMessage) {
+			String clickMessage_formatted = ChatColor.translateAlternateColorCodes('&', msg);
+			clickoption_messages.add(clickMessage_formatted);
 		}
 	}
 }

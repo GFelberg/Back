@@ -22,7 +22,7 @@ public class Back implements CommandExecutor {
 			}
 
 			if (!(sender.hasPermission("back.back"))) {
-				sender.sendMessage(ChatColor.RED + "You dont have permission to perform this command!");
+				sender.sendMessage(BackSystem.back_nopermission);
 				return true;
 			}
 

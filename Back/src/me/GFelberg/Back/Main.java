@@ -26,6 +26,7 @@ public class Main extends JavaPlugin implements Listener {
 		loadBackConfig();
 		loadEvents();
 		BackSystem.loadAllBackLocations();
+		BackSystem.loadClickOptionMessages();
 		getCommand("back").setExecutor(new Back());
 		Bukkit.getConsoleSender().sendMessage("----------------------------");
 		Bukkit.getConsoleSender().sendMessage("Back Plugin Enabled!");
@@ -34,7 +35,7 @@ public class Main extends JavaPlugin implements Listener {
 
 		new UpdateChecker(this, 94702).getVersion(version -> {
 			if (this.getDescription().getVersion().equals(version)) {
-				getLogger().info("There is not a new update available.");
+				getLogger().info("No update available.");
 			} else {
 				getLogger().info("There is a new update available.");
 			}
