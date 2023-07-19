@@ -3,6 +3,8 @@
 ## English: :earth_americas:
 Back is a simple plugin made for Minecraft which has the ability to teleport the player to your last location after his death
 
+![Vídeo Back](https://github.com/GFelberg/Back/assets/41524430/8ae7425d-3dc9-4fc2-8c78-1559dca88e46)
+
 ### Commands:
     /back help - Shows the Help Page
     /back - Teleport to your last location
@@ -16,6 +18,7 @@ Back is a simple plugin made for Minecraft which has the ability to teleport the
     back.reload : Access to Reload the Plugin
     
 ### How the Plugin works?
+
     It's simple. When a player dies, if he has "back.back" permission, his death location will be saved. If he has "back.bypass" permission, he will be able to
     teleport into his last location without cooldown, if enabled. The cooldown is in seconds and can be customized in the config.yml
     
@@ -30,6 +33,8 @@ Back is a simple plugin made for Minecraft which has the ability to teleport the
 
 ## Portuguese: <img src="https://github.com/GFelberg/Frozen/assets/41524430/4033b457-ed2c-4674-832e-06935c445f0c" width="30" height="30">
 Back é um plugin desenvolvido para o Minecraft que possui a habilidade de teleportar o jogador para a sua última localização após a sua morte
+
+![Vídeo Back](https://github.com/GFelberg/Back/assets/41524430/8ae7425d-3dc9-4fc2-8c78-1559dca88e46)
 
 ### Comandos:
     /back help - Mostrar a Página de Ajuda
