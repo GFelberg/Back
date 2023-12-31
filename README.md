@@ -23,12 +23,12 @@ Back is a simple plugin made for Minecraft which has the ability to teleport the
     
     When the player execute the "/back" command, he will be teleported to his last location 
 
-### Placeholders
+### Placeholders:
     The plugin has the %back_delaytime% placeholder. It doesnt needs to have any plugin dependency.
 
     %back_delaytime% : Gets the remaining time for use the Back Command, if cooldown is enabled.
 
-### ClickOption
+### ClickOption:
     ClickOption is an option displayed in the chat to the player use
     the /back command instead typing the command in chat.
     
@@ -85,12 +85,12 @@ Back é um plugin desenvolvido para o Minecraft que possui a habilidade de telep
     
     Quando o jogador executar o comando "/back", ele será teleportado para sua última localização
 
-### Placeholders
+### Placeholders:
     O plugin possui a placeholder %back_delaytime%. Não é necessário nenhuma dependência de plugin externo.
 
     %back_delaytime% : Recupera o tempo restante para utilizar o comando Back, se o cooldown estiver ligado.
 
-### ClickOption
+### ClickOption:
     ClickOption é uma opção disponibilizada no chat ao jogador utilizar o comando /back por meio de um 
     clique com o mouse ao invés de digitar no chat.
     
