@@ -18,11 +18,43 @@ Back is a simple plugin made for Minecraft which has the ability to teleport the
     back.reload : Access to Reload the Plugin
     
 ### How the Plugin works?
-
     It's simple. When a player dies, if he has "back.back" permission, his death location will be saved. If he has "back.bypass" permission, he will be able to
     teleport into his last location without cooldown, if enabled. The cooldown is in seconds and can be customized in the config.yml
     
     When the player execute the "/back" command, he will be teleported to his last location 
+
+### Placeholders
+    The plugin has the %back_delaytime% placeholder. It doesnt needs to have any plugin dependency.
+
+    %back_delaytime% : Gets the remaining time for use the Back Command, if cooldown is enabled.
+
+### ClickOption
+    ClickOption is an option displayed in the chat to the player use
+    the /back command instead typing the command in chat.
+    
+    By default, this option is disabled, and can be enabled
+    changing the status to "true" in config.yml
+
+![1](https://github.com/GFelberg/Back/assets/41524430/482a2079-cffe-4c5c-9958-bb991328078a)
+    
+    By default, you can see there's a space above and under the "&c[Click here to Death Location]" here
+    in config.yml.
+
+![2](https://github.com/GFelberg/Back/assets/41524430/219d80a5-5025-424f-b89b-dc916d122019)
+
+    However, in game, it's 2 spaces above and under
+    (1 space above and under by default in game (can't be changed) + spaces in config.yml).
+
+![3](https://github.com/GFelberg/Back/assets/41524430/c773ae54-54d7-40c0-9742-4d395795e61c)
+
+    If you believe is a lot, you can't just remove the spaces here in the config.yml, 
+    so only 1 space will be visible above and under in game.
+
+    If you want add more information, you can change or add more lines.
+    
+![4](https://github.com/GFelberg/Back/assets/41524430/ca8058ed-e6cb-4646-883a-886424de50a6)
+
+![5](https://github.com/GFelberg/Back/assets/41524430/82ba0361-fbb5-453c-84c8-4ce6a96a8423)
 
 ### Available for download at Spigot: https://www.spigotmc.org/resources/back.94702/
 
@@ -52,6 +84,38 @@ Back é um plugin desenvolvido para o Minecraft que possui a habilidade de telep
     teleportar para sua última localização sem esperar pelo cooldown, se ativado. O cooldown é em segundos e pode ser customizado na config.yml
     
     Quando o jogador executar o comando "/back", ele será teleportado para sua última localização
+
+### Placeholders
+    O plugin possui a placeholder %back_delaytime%. Não é necessário nenhuma dependência de plugin externo.
+
+    %back_delaytime% : Recupera o tempo restante para utilizar o comando Back, se o cooldown estiver ligado.
+
+### ClickOption
+    ClickOption é uma opção disponibilizada no chat ao jogador utilizar o comando /back por meio de um 
+    clique com o mouse ao invés de digitar no chat.
+    
+    Por padrão, essa opção está desativada, e pode ser ativada trocando o status para "true" na config.yml
+
+![1](https://github.com/GFelberg/Back/assets/41524430/482a2079-cffe-4c5c-9958-bb991328078a)
+    
+    Por padrão, você pode observar um espaço acima e abaixo da mensagem "&c[Click here to Death Location]" aqui
+    na config.yml.
+
+![2](https://github.com/GFelberg/Back/assets/41524430/219d80a5-5025-424f-b89b-dc916d122019)
+
+    Contudo, no jogo, são 2 espaços acima e abaixo
+    (1 espaço acima e abaixo por padrão no jogo (não pode ser alterado) + espaços naconfig.yml).
+
+![3](https://github.com/GFelberg/Back/assets/41524430/c773ae54-54d7-40c0-9742-4d395795e61c)
+
+    Se você acredita que seja muito, você pode só remover os espaços aqui na config.yml, 
+    então somente 1 espaço será visível acima e abaixo no jogo.
+
+    Se você deseja adicionar mais informações, você pode alterar ou adicionar mais linhas.
+    
+![4](https://github.com/GFelberg/Back/assets/41524430/ca8058ed-e6cb-4646-883a-886424de50a6)
+
+![5](https://github.com/GFelberg/Back/assets/41524430/82ba0361-fbb5-453c-84c8-4ce6a96a8423)
 
 ### Disponível para download no Spigot: https://www.spigotmc.org/resources/back.94702/
 
