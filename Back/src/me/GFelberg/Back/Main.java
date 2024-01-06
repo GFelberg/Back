@@ -27,6 +27,7 @@ public class Main extends JavaPlugin implements Listener {
 		loadEvents();
 		BackSystem.loadAllBackLocations();
 		BackSystem.loadClickOptionMessages();
+		BackSystem.loadBlacklistWorlds();
 		getCommand("back").setExecutor(new Back());
 		Bukkit.getConsoleSender().sendMessage("----------------------------");
 		Bukkit.getConsoleSender().sendMessage("Back Plugin Enabled!");

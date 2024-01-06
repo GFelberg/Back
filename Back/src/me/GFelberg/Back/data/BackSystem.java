@@ -19,38 +19,74 @@ public class BackSystem {
 	public static Map<Player, Location> back = new HashMap<Player, Location>();
 	public static HashMap<UUID, Long> cooldown = new HashMap<UUID, Long>();
 	public static List<String> clickoption_messages = new ArrayList<String>();
+	public static List<String> worlds = new ArrayList<String>();
 	public static int cooldownTime;
-	public static String back_message, back_failed_message, back_cooldown_message, back_nopermission;
+	public static String back_message, back_failed_message, back_cooldown_message, back_nopermission,
+			back_blocked_world;
 
 	public static void loadVariables() {
 		back_message = Main.getInstance().getConfig().getString("Back.Message").replace("&", "§");
 		back_failed_message = Main.getInstance().getConfig().getString("Back.Failed").replace("&", "§");
 		back_nopermission = Main.getInstance().getConfig().getString("Back.NoPermission").replace("&", "§");
 		back_cooldown_message = Main.getInstance().getConfig().getString("Cooldown.Message").replace("&", "§");
+		back_blocked_world = Main.getInstance().getConfig().getString("Back.BlockedWorld").replace("&", "§");
 		cooldownTime = Main.getInstance().getConfig().getInt("Cooldown.Time");
+		worlds = Main.getInstance().getConfig().getStringList("BlockedWorlds");
 	}
 
 	public void backPlayer(Player p) {
 
-		if (!(back.containsKey(p))) {
-			p.sendMessage(back_failed_message);
-			return;
-		} else {
-			if (!(Main.getInstance().getConfig().getBoolean("Cooldown.Enable"))) {
-				teleportPlayer(p);
-			} else {
-				UUID uuid = p.getUniqueId();
-				if (cooldown.containsKey(uuid)) {
-					if (p.hasPermission("back.bypass")) {
-						cooldown.remove(uuid);
-						teleportPlayer(p);
-					} else {
-						long time = ((cooldown.get(uuid) / 1000) + cooldownTime) - (System.currentTimeMillis() / 1000);
-						if (time > 0) {
-							p.sendMessage(back_cooldown_message.replace("%back_delaytime%", String.valueOf(time)));
-						} else {
+		if (Main.getInstance().getConfig().getBoolean("WorldBlacklist.Enable")) {
+			if (!(back.containsKey(p))) {
+				p.sendMessage(back_failed_message);
+				return;
+			}
+			Location loc = back.get(p);
+			for (String blockedWorld : worlds) {
+				if (loc.getWorld().getName().equals(blockedWorld)) {
+					p.sendMessage(back_blocked_world);
+					return;
+				} else {
+					UUID uuid = p.getUniqueId();
+					if (cooldown.containsKey(uuid)) {
+						if (p.hasPermission("back.bypass")) {
 							cooldown.remove(uuid);
 							teleportPlayer(p);
+						} else {
+							long time = ((cooldown.get(uuid) / 1000) + cooldownTime)
+									- (System.currentTimeMillis() / 1000);
+							if (time > 0) {
+								p.sendMessage(back_cooldown_message.replace("%back_delaytime%", String.valueOf(time)));
+							} else {
+								cooldown.remove(uuid);
+								teleportPlayer(p);
+							}
+						}
+					}
+				}
+			}
+		} else {
+			if (!(back.containsKey(p))) {
+				p.sendMessage(back_failed_message);
+				return;
+			} else {
+				if (!(Main.getInstance().getConfig().getBoolean("Cooldown.Enable"))) {
+					teleportPlayer(p);
+				} else {
+					UUID uuid = p.getUniqueId();
+					if (cooldown.containsKey(uuid)) {
+						if (p.hasPermission("back.bypass")) {
+							cooldown.remove(uuid);
+							teleportPlayer(p);
+						} else {
+							long time = ((cooldown.get(uuid) / 1000) + cooldownTime)
+									- (System.currentTimeMillis() / 1000);
+							if (time > 0) {
+								p.sendMessage(back_cooldown_message.replace("%back_delaytime%", String.valueOf(time)));
+							} else {
+								cooldown.remove(uuid);
+								teleportPlayer(p);
+							}
 						}
 					}
 				}
@@ -124,6 +160,17 @@ public class BackSystem {
 		for (String msg : clickMessage) {
 			String clickMessage_formatted = ChatColor.translateAlternateColorCodes('&', msg);
 			clickoption_messages.add(clickMessage_formatted);
+		}
+	}
+
+	public static void loadBlacklistWorlds() {
+		FileConfiguration config = Main.getInstance().getConfig();
+		List<String> worlds_list = config.getStringList("BlockedWorlds");
+		worlds = new ArrayList<>();
+
+		for (String w : worlds_list) {
+			String world = ChatColor.translateAlternateColorCodes('&', w);
+			worlds.add(world);
 		}
 	}
 }

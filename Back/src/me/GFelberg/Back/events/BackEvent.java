@@ -20,6 +20,7 @@ public class BackEvent implements Listener {
 	@EventHandler
 	public void onDeath(PlayerDeathEvent event) {
 		Player p = event.getEntity();
+
 		if (p.hasPermission("back.back")) {
 			BackSystem.back.put(p, p.getLocation());
 			BackSystem.cooldown.put(p.getUniqueId(), System.currentTimeMillis());

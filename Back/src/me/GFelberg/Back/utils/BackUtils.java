@@ -19,10 +19,12 @@ public class BackUtils {
 
 		if (!(p.hasPermission("back.reload"))) {
 			p.sendMessage(ChatColor.RED + "You dont have permission to perform this command!");
+			return;
 		} else {
 			Main.getInstance().reloadConfig();
 			Main.getInstance().loadVariables();
 			BackSystem.loadClickOptionMessages();
+			BackSystem.loadBlacklistWorlds();
 			p.sendMessage(prefix + " " + ChatColor.GREEN + "Plugin reloaded successfully!");
 			Bukkit.getConsoleSender().sendMessage("======================================");
 			Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "Back Plugin reloaded");
@@ -39,6 +41,7 @@ public class BackUtils {
 			p.sendMessage(ChatColor.YELLOW + "/back help: " + helpUtils.getHelp_page());
 			p.sendMessage(ChatColor.YELLOW + "/back : " + helpUtils.getHelp_back());
 			p.sendMessage(ChatColor.WHITE + "-----------------------------------------");
+			return;
 		} else {
 			p.sendMessage(ChatColor.WHITE + "-----------------------------------------");
 			p.sendMessage(ChatColor.AQUA + "Back - Help Commands");
