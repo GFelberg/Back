@@ -84,17 +84,16 @@ ClickOption:
 # This configuration will display the WorldBlacklist System
 
 # WorldBlacklist is a method created to block the /back command to be executed. If you put a world that exists in your server in the list, if a player dies and execute the command
-# the player will be blocked. The command will only works if the world which he died is an allowed world to execute the command.   
+# the player will be blocked. The command will only works if the he dies inside of an allowed world.
 
 # By default, this option will be disabled.
-  
+
 WorldBlacklist:
-  Enable: false  
-  
+  Enable: false
+
 # Blocked Worlds
-  
-BlockedWorlds:  
+
+BlockedWorlds:
   - 'world1'
   - 'world2'
   - 'world3'
-  
