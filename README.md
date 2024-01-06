@@ -56,6 +56,17 @@ Back is a simple plugin made for Minecraft which has the ability to teleport the
 
 ![5](https://github.com/GFelberg/Back/assets/41524430/82ba0361-fbb5-453c-84c8-4ce6a96a8423)
 
+### World Blacklist:
+    The WorldBlacklist is a method created to block the /back command to be executed. If you put a world that exists in your server 
+    in the list, if a player dies and execute the command, the player will be blocked. The command will only works if the he dies 
+    inside of an allowed world.
+
+    # By default, this option will be disabled.
+
+![WorldBlock1](https://github.com/GFelberg/Back/assets/41524430/57cd7f81-1301-4cd6-8f5d-c97eb174e540)
+
+![WorldBlock 2](https://github.com/GFelberg/Back/assets/41524430/723948b0-4485-440d-afe1-41c8977411ae)
+
 ### Available for download at Spigot: https://www.spigotmc.org/resources/back.94702/
 
 ### Images:
@@ -116,6 +127,18 @@ Back é um plugin desenvolvido para o Minecraft que possui a habilidade de telep
 ![4](https://github.com/GFelberg/Back/assets/41524430/ca8058ed-e6cb-4646-883a-886424de50a6)
 
 ![5](https://github.com/GFelberg/Back/assets/41524430/82ba0361-fbb5-453c-84c8-4ce6a96a8423)
+
+### World Blacklist:
+    O World Blacklist é um método de você bloquear o jogador de usar o comando /back. Caso o jogador morra em
+    um mundo no qual esteja dentro da lista de mundos bloqueados, o jogador será bloqueado de retornar ao mundo.
+
+    Caso ocorra uma morte em um mundo que seja permitido, o comando irá funcionar normalmente.
+
+    Por padrão, essa configuração está desativada.
+    
+![WorldBlock1](https://github.com/GFelberg/Back/assets/41524430/57cd7f81-1301-4cd6-8f5d-c97eb174e540)
+
+![WorldBlock 2](https://github.com/GFelberg/Back/assets/41524430/723948b0-4485-440d-afe1-41c8977411ae)
 
 ### Disponível para download no Spigot: https://www.spigotmc.org/resources/back.94702/
 
