@@ -22,7 +22,7 @@ public class Back implements CommandExecutor {
 			}
 
 			if (!(sender.hasPermission("back.back"))) {
-				sender.sendMessage(BackSystem.back_nopermission);
+				sender.sendMessage(BackSystem.translateHexColorCodes("#", "", BackSystem.back_nopermission));
 				return true;
 			}
 
