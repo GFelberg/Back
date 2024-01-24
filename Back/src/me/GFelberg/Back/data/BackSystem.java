@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -21,8 +23,8 @@ public class BackSystem {
 	public static List<String> clickoption_messages = new ArrayList<String>();
 	public static List<String> worlds = new ArrayList<String>();
 	public static int cooldownTime;
-	public static String back_message, back_failed_message, back_cooldown_message, back_nopermission,
-			back_blocked_world;
+	public static String back_message, back_failed_message, back_cooldown_message, back_nopermission, back_blocked_world;
+	public static final char color = '\u00A7';
 
 	public static void loadVariables() {
 		back_message = Main.getInstance().getConfig().getString("Back.Message").replace("&", "§");
@@ -38,13 +40,13 @@ public class BackSystem {
 
 		if (Main.getInstance().getConfig().getBoolean("WorldBlacklist.Enable")) {
 			if (!(back.containsKey(p))) {
-				p.sendMessage(back_failed_message);
+				p.sendMessage(translateHexColorCodes("#", "", back_failed_message));
 				return;
 			}
 			Location loc = back.get(p);
 			for (String blockedWorld : worlds) {
 				if (loc.getWorld().getName().equals(blockedWorld)) {
-					p.sendMessage(back_blocked_world);
+					p.sendMessage(translateHexColorCodes("#", "", back_blocked_world));
 					return;
 				} else {
 					UUID uuid = p.getUniqueId();
@@ -56,7 +58,7 @@ public class BackSystem {
 							long time = ((cooldown.get(uuid) / 1000) + cooldownTime)
 									- (System.currentTimeMillis() / 1000);
 							if (time > 0) {
-								p.sendMessage(back_cooldown_message.replace("%back_delaytime%", String.valueOf(time)));
+								p.sendMessage(translateHexColorCodes("#", "", back_cooldown_message.replace("%back_delaytime%", String.valueOf(time))));
 							} else {
 								cooldown.remove(uuid);
 								teleportPlayer(p);
@@ -67,7 +69,7 @@ public class BackSystem {
 			}
 		} else {
 			if (!(back.containsKey(p))) {
-				p.sendMessage(back_failed_message);
+				p.sendMessage(translateHexColorCodes("#", "", back_failed_message));
 				return;
 			} else {
 				if (!(Main.getInstance().getConfig().getBoolean("Cooldown.Enable"))) {
@@ -82,7 +84,7 @@ public class BackSystem {
 							long time = ((cooldown.get(uuid) / 1000) + cooldownTime)
 									- (System.currentTimeMillis() / 1000);
 							if (time > 0) {
-								p.sendMessage(back_cooldown_message.replace("%back_delaytime%", String.valueOf(time)));
+								p.sendMessage(translateHexColorCodes("#", "", back_cooldown_message.replace("%back_delaytime%", String.valueOf(time))));
 							} else {
 								cooldown.remove(uuid);
 								teleportPlayer(p);
@@ -100,7 +102,7 @@ public class BackSystem {
 		BackConfig.saveConfig();
 		p.teleport(back.get(p));
 		back.remove(p);
-		p.sendMessage(back_message);
+		p.sendMessage(translateHexColorCodes("#", "", back_message));
 	}
 
 	public static void createBackLocation(Player p) {
@@ -158,7 +160,7 @@ public class BackSystem {
 		clickoption_messages = new ArrayList<>();
 
 		for (String msg : clickMessage) {
-			String clickMessage_formatted = ChatColor.translateAlternateColorCodes('&', msg);
+			String clickMessage_formatted = translateHexColorCodes("#", "", msg);
 			clickoption_messages.add(clickMessage_formatted);
 		}
 	}
@@ -173,4 +175,22 @@ public class BackSystem {
 			worlds.add(world);
 		}
 	}
+	
+	//Sourced from this post by imDaniX: https://github.com/SpigotMC/BungeeCord/pull/2883#issuecomment-653955600
+	public static String translateHexColorCodes(String startTag, String endTag, String message)
+    {
+        final Pattern hexPattern = Pattern.compile(startTag + "([A-Fa-f0-9]{6})" + endTag);
+        Matcher matcher = hexPattern.matcher(message);
+        StringBuffer buffer = new StringBuffer(message.length() + 4 * 8);
+        while (matcher.find())
+        {
+            String group = matcher.group(1);
+            matcher.appendReplacement(buffer, color + "x"
+                    + color + group.charAt(0) + color + group.charAt(1)
+                    + color + group.charAt(2) + color + group.charAt(3)
+                    + color + group.charAt(4) + color + group.charAt(5)
+                    );
+        }
+        return matcher.appendTail(buffer).toString();
+    }
 }

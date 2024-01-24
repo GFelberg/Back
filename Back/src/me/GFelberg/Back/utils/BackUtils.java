@@ -25,7 +25,7 @@ public class BackUtils {
 			Main.getInstance().loadVariables();
 			BackSystem.loadClickOptionMessages();
 			BackSystem.loadBlacklistWorlds();
-			p.sendMessage(prefix + " " + ChatColor.GREEN + "Plugin reloaded successfully!");
+			p.sendMessage(BackSystem.translateHexColorCodes("#", "", prefix) + " " + ChatColor.GREEN + "Plugin reloaded successfully!");
 			Bukkit.getConsoleSender().sendMessage("======================================");
 			Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "Back Plugin reloaded");
 			Bukkit.getConsoleSender().sendMessage("======================================");
@@ -38,16 +38,16 @@ public class BackUtils {
 		if (!(p.hasPermission("back.admin"))) {
 			p.sendMessage(ChatColor.WHITE + "-----------------------------------------");
 			p.sendMessage(ChatColor.AQUA + "Back - Help Commands");
-			p.sendMessage(ChatColor.YELLOW + "/back help: " + helpUtils.getHelp_page());
-			p.sendMessage(ChatColor.YELLOW + "/back : " + helpUtils.getHelp_back());
+			p.sendMessage(ChatColor.YELLOW + "/back help: " + BackSystem.translateHexColorCodes("#", "", helpUtils.getHelp_page()));
+			p.sendMessage(ChatColor.YELLOW + "/back : " + BackSystem.translateHexColorCodes("#", "", helpUtils.getHelp_back()));
 			p.sendMessage(ChatColor.WHITE + "-----------------------------------------");
 			return;
 		} else {
 			p.sendMessage(ChatColor.WHITE + "-----------------------------------------");
 			p.sendMessage(ChatColor.AQUA + "Back - Help Commands");
-			p.sendMessage(ChatColor.YELLOW + "/back help: " + helpUtils.getHelp_page());
-			p.sendMessage(ChatColor.YELLOW + "/back : " + helpUtils.getHelp_back());
-			p.sendMessage(ChatColor.YELLOW + "/back reload : " + helpUtils.getHelp_reload());
+			p.sendMessage(ChatColor.YELLOW + "/back help: " + BackSystem.translateHexColorCodes("#", "", helpUtils.getHelp_page()));
+			p.sendMessage(ChatColor.YELLOW + "/back : " + BackSystem.translateHexColorCodes("#", "", helpUtils.getHelp_back()));
+			p.sendMessage(ChatColor.YELLOW + "/back reload : " + BackSystem.translateHexColorCodes("#", "", helpUtils.getHelp_reload()));
 			p.sendMessage(ChatColor.WHITE + "-----------------------------------------");
 		}
 	}
