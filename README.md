@@ -67,6 +67,18 @@ Back is a simple plugin made for Minecraft which has the ability to teleport the
 
 ![WorldBlock 2](https://github.com/GFelberg/Back/assets/41524430/723948b0-4485-440d-afe1-41c8977411ae)
 
+### Hex Colors:
+    The Hex Colors is now supported in the plugin. You can use the old method
+    at the same time in the message.
+
+    The message related to the ClickOption is not available for Hex Colors.
+    
+![HexColors1](https://github.com/GFelberg/Back/assets/41524430/0755ad40-d38f-458b-8abd-51fb4c397cc3)
+
+![HexColors2](https://github.com/GFelberg/Back/assets/41524430/b486f535-a762-4abd-99e2-b8303d5b3f7a)
+
+![HexColors3](https://github.com/GFelberg/Back/assets/41524430/5efc3153-5ebf-495a-8027-8e73fad88aeb)
+
 ### Available for download at Spigot: https://www.spigotmc.org/resources/back.94702/
 
 ### Images:
@@ -139,6 +151,18 @@ Back é um plugin desenvolvido para o Minecraft que possui a habilidade de telep
 ![WorldBlock1](https://github.com/GFelberg/Back/assets/41524430/57cd7f81-1301-4cd6-8f5d-c97eb174e540)
 
 ![WorldBlock 2](https://github.com/GFelberg/Back/assets/41524430/723948b0-4485-440d-afe1-41c8977411ae)
+
+### Hex Colors:
+    O Hex Colors é agora suportado no plugin. Você pode utilizar o método antigo e o novo
+    ao mesmo tempo na mesma mensagem.
+
+    A mensagem relacionada ao ClickOption ainda não possui suporte ao Hex Colors.
+    
+![HexColors1](https://github.com/GFelberg/Back/assets/41524430/0755ad40-d38f-458b-8abd-51fb4c397cc3)
+
+![HexColors2](https://github.com/GFelberg/Back/assets/41524430/b486f535-a762-4abd-99e2-b8303d5b3f7a)
+
+![HexColors3](https://github.com/GFelberg/Back/assets/41524430/5efc3153-5ebf-495a-8027-8e73fad88aeb)
 
 ### Disponível para download no Spigot: https://www.spigotmc.org/resources/back.94702/
 
