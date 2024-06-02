@@ -19,6 +19,7 @@ public class UpdateChecker {
 		this.resourceId = resourceId;
 	}
 
+	@SuppressWarnings("deprecation")
 	public void getVersion(final Consumer<String> consumer) {
 		Bukkit.getScheduler().runTaskAsynchronously(this.plugin, () -> {
 			try (InputStream inputStream = new URL(

@@ -160,7 +160,7 @@ public class BackSystem {
 		clickoption_messages = new ArrayList<>();
 
 		for (String msg : clickMessage) {
-			String clickMessage_formatted = translateHexColorCodes("#", "", msg);
+			String clickMessage_formatted = ChatColor.translateAlternateColorCodes('&', msg);
 			clickoption_messages.add(clickMessage_formatted);
 		}
 	}
